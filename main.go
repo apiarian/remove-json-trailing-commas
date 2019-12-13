@@ -95,7 +95,7 @@ func quickCheckJSON(data []byte) error {
 }
 
 func cleanTrailingCommas(data []byte) ([]byte, error) {
-	re, err := regexp.Compile(`(?ms),(\s*[}\]])`)
+	re, err := regexp.Compile(`,(\s*([}\]]|$))`)
 	if err != nil {
 		return nil, err
 	}

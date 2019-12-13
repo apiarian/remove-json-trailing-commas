@@ -34,6 +34,11 @@ func TestCleanTrailingCommas(t *testing.T) {
 				"foo": 1
 			}`,
 		},
+		{
+			name:   "final trailing comma",
+			input:  `{"foo": "bar"},`,
+			output: `{"foo": "bar"}`,
+		},
 	}
 
 	for _, c := range cases {
